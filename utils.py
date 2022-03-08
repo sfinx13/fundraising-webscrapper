@@ -10,7 +10,7 @@ from parameters import *
 def get_emoji_by(percentage_raised):
     if percentage_raised == "-":
         return "🤷 "
-    elif percentage_raised == 100:
+    elif percentage_raised >= 100:
         return "🌞 "
     elif percentage_raised > 79:
         return "☀️ "
