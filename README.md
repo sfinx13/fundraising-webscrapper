@@ -30,6 +30,8 @@ docker run -it -v "$PWD":/app app-webscrapping
 
 ![Screenshoot output csv folder](/_DOC/csv_folder_screen.png)
 
+> Data extracted from the plateform
+
 ![Screenshoot content csv](/_DOC/csv_screen.png)
 
 ## Links
