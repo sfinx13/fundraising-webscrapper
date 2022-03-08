@@ -30,7 +30,6 @@ def format_date(date_string):
 
 def generate_file_from(fieldnames, projects):
     filename = "projects-" + time.strftime("%Y%m%d-%H%M%S") + '.csv'
-    create_output_directory()
     with open(CSV_OUTPUT_FILEPATH + filename, 'w', newline='', encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()

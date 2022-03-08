@@ -8,10 +8,13 @@ for url in URLS_TO_SCRAP:
 
 projects = sorted(
     projects, key=lambda project: project['launched_at'], reverse=True)
+try:
+    create_output_directory()
+    filename = generate_file_from(CSV_HEADER, projects)
 
-filename = generate_file_from(CSV_HEADER, projects)
+    print('[end] Done! Csv file generated, please check {}'.format(
+        os.getcwd() + '/' + CSV_OUTPUT_FILEPATH + filename))
 
-print('[end] Done! Csv file generated, please check {}'.format(
-    os.getcwd() + '/' +  CSV_OUTPUT_FILEPATH + filename))
-
-print('[end] For support projects 👉 {}'.format(FUNDRAISER_URL))
+    print('[end] For support projects 👉 {}'.format(FUNDRAISER_URL))
+except Exception as err:
+    print('😲 An error occurred:', err)
