@@ -1,5 +1,7 @@
 # Web scrapping from fundraising platform
 
+![Screenshoot website](/_DOC/website_screen.png)
+
 ![Screenshoot console application](/_DOC/app_screen.png)
 
 ## Installation
