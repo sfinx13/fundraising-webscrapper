@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, date, timedelta
 from parameters import *
 
+
 def get_emoji_by(percentage_raised):
     if percentage_raised == "-":
         return "🤷 "
@@ -21,12 +22,14 @@ def get_emoji_by(percentage_raised):
     else:
         return "☁️ "
 
+
 def format_date(date_string):
     if ("Launched the" in date_string):
         return datetime.strptime(date_string[13:], '%d %b %Y').strftime("%Y-%m-%d")
     else:
         day_elapsed = [int(i) for i in date_string.split() if i.isdigit()]
         return (date.today() - timedelta(day_elapsed.pop())).strftime("%Y-%m-%d")
+
 
 def generate_file_from(fieldnames, projects):
     filename = "projects-" + time.strftime("%Y%m%d-%H%M%S") + '.csv'
@@ -35,14 +38,16 @@ def generate_file_from(fieldnames, projects):
         writer.writeheader()
         for project in projects:
             writer.writerow(project)
-    
+
     return filename
+
 
 def create_output_directory():
     try:
         os.mkdir(CSV_OUTPUT_FILEPATH)
     except OSError:
         pass
+
 
 def get_projects_from(url):
     scrapper = cloudscraper.create_scraper()
