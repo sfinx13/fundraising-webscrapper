@@ -9,7 +9,8 @@ URLS_TO_SCRAP = [
     'https://www.cotizup.com/campaigns/religion',
     'https://www.cotizup.com/campaigns/animaux',
     'https://www.cotizup.com/campaigns/sports',
-    'https://www.cotizup.com/campaigns/autres'
+    'https://www.cotizup.com/campaigns/autres',
+    'https://www.cotizup.com/campaigns?search=pour-moh1'
 ]
 
 CSV_HEADER = [
