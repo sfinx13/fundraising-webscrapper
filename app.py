@@ -1,10 +1,12 @@
 from parameters import *
 from utils import *
+import time
 
 print('[start] Extract data from website')
 projects = []
 for url in URLS_TO_SCRAP:
     projects += get_projects_from(url)
+    time.sleep(1)
 
 projects = sorted(
     projects, key=lambda project: project['launched_at'], reverse=True)
