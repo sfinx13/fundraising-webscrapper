@@ -28,8 +28,9 @@ def format_date(date_string):
         return datetime.strptime(date_string[13:], '%d %b %Y').strftime("%Y-%m-%d")
     else:
         day_elapsed = [int(i) for i in date_string.split() if i.isdigit()]
-        return (date.today() - timedelta(day_elapsed.pop())).strftime("%Y-%m-%d")
-
+        if len(day_elapsed) > 0:
+            return (date.today() - timedelta(day_elapsed.pop())).strftime("%Y-%m-%d")
+        return None
 
 def generate_file_from(fieldnames, projects):
     filename = "projects-" + time.strftime("%Y%m%d-%H%M%S") + '.csv'
@@ -78,7 +79,7 @@ def get_projects_from(url):
                 "amount_total":  amount_total,
                 "percentage_raised": str(percentage_raised) + " %" if "-" != percentage_raised else "-",
                 "average_raised": amount_raised // nb_people if "-" != nb_people else "-",
-                "launched_at": format_date(launched_at)
+                "launched_at": format_date(launched_at) if format_date(launched_at) is not None else "-"
             })
 
             print("✅ {} {} - 💰 {} € raised".format(get_emoji_by(percentage_raised),
