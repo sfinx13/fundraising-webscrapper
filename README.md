@@ -6,8 +6,8 @@
 
 ## Installation
 ```bash
-docker build -t app-webscrapping .
-docker run -it -v "$PWD":/app app-webscrapping
+make build
+make run
 ```
 
 ## Output

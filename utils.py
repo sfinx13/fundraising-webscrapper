@@ -5,7 +5,7 @@ import os
 import time
 from bs4 import BeautifulSoup
 from datetime import datetime, date, timedelta
-from parameters import *
+from parameters import CSV_OUTPUT_FILEPATH
 
 
 def get_emoji_by(percentage_raised):
@@ -31,6 +31,7 @@ def format_date(date_string):
         if len(day_elapsed) > 0:
             return (date.today() - timedelta(day_elapsed.pop())).strftime("%Y-%m-%d")
         return None
+
 
 def generate_file_from(fieldnames, projects):
     filename = "projects-" + time.strftime("%Y%m%d-%H%M%S") + '.csv'
