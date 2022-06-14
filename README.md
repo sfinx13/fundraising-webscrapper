@@ -1,8 +1,8 @@
 # Web scrapping from fundraising platform
 
-![Screenshoot website](/_DOC/website_screen.png)
+![Screenshoot website](/images/website_screen.png)
 
-![Screenshoot console application](/_DOC/app_screen.png)
+![Screenshoot console application](/images/app_screen.png)
 
 ## Installation
 ```bash
@@ -28,11 +28,11 @@ make run
 
 > CSV exports are generated at `output` directory, files are timestamped
 
-![Screenshoot output csv folder](/_DOC/csv_folder_screen.png)
+![Screenshoot output csv folder](/images/csv_folder_screen.png)
 
 > Data extracted from the plateform
 
-![Screenshoot content csv](/_DOC/csv_screen.png)
+![Screenshoot content csv](/images/csv_screen.png)
 
 ## Links
 * https://www.crummy.com/software/BeautifulSoup/bs4/doc/
